@@ -79,13 +79,15 @@ UserSchema.methods.toAuthJSON = function() {
     token: this.generateJWT(),
     bio: this.bio,
     image: this.image,
-    role: this.role
+    role: this.role,
+    isVerified: this.isVerified
   };
 };
 
 UserSchema.methods.toProfileJSONFor = function(user) {
   return {
     username: this.username,
+    isVerified: this.isVerified,
     bio: this.bio,
     image:
       this.image || "https://static.productionready.io/images/smiley-cyrus.jpg",
