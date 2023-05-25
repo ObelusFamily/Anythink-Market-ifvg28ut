@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
-import { ReactComponent as TopSellerSvg } from '../imgs/verified_seller.svg';
+// import { ReactComponent as TopSellerSvg } from '../imgs/verified_seller.svg';
 
 
 
@@ -31,7 +31,6 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   };
-
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -57,10 +56,11 @@ const ItemPreview = (props) => {
               className="user-pic rounded-circle pr-1"
             />
           </Link>
-
+          
           {item.seller.isVerified && (
             <span>
-              <TopSellerSvg />TOP SELLER
+              <img src="verified_seller.svg" alt="verified seller" />
+              TOP SELLER
             </span>
           )
           }
