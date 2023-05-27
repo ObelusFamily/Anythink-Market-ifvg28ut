@@ -1,8 +1,13 @@
 import React from "react";
 import logo from "../../imgs/logo.png";
+import styled from "styled-components";
 
 const Banner = () => {
+  const StyledBanner = styled.div`
+    background-color: ${(props) => props.theme.dark};
+    `
   return (
+    <StyledBanner>
     <div className="banner text-white">
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
@@ -13,6 +18,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
+  </StyledBanner>
   );
 };
 
